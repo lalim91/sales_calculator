@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Velocify Sales Calculator</title>
+
+    <!--JQuery Library-->
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!--Style Sheets-->
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+
+    <!--JS Scripts-->
+    <script src="script.js"></script>
+
+</head>
+<body>
+   
+   <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="/pictures/Velocify_Logo_RGB.png">
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+        <form action="">
+            <div class="col-md-5">
+               <div>
+                   <fieldset>
+                        <legend>Initial Cost</legend>
+                         <div class="form-group col-xs-12">
+                            <label for="number_users">Number of Users *required</label>
+                            <input class="form-control" type="number" min=0 name="num_users" size="number" required>
+                        </div>
+                        <br>
+                         <div class="form-group col-xs-12">
+                            <label for="timeline_months">Timeline in Months</label>
+                            <input class="form-control" type="number" min=0 name="time_months"  size="number">
+                        </div>
+                        <br>
+                        <div class="form-group col-xs-12">
+                            <label for="number_programmers">Number of Programmers</label>
+                            <input class="form-control" type="number" min=0 name="num_programmers" size="number">
+                        </div> 
+                        <div>
+                            <p>If all fields are filled, click submit, otherwise proceed to checkboxes.</p>
+                        </div>
+                   </fieldset>   
+               </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <fieldset>
+                        <legend>Ask which functionality they're looking for in their solution:</legend>
+                        <div class="form-group col-xs-12 col-md-6">
+                          <div class="checkbox">
+                               <label for="basic_platform"><input name="basic_platform" type="checkbox">Basic platform</label>
+                           </div>
+                           <div class="checkbox">
+                               <label for="basic_lead_capture"><input name="basic_lead_capture" type="checkbox">Basic lead capture</label>
+                           </div>
+                            <div class="checkbox">
+                               <label for="advanced_lead_capture"><input name="advanced_lead_capture" type="checkbox">Advance lead capture</label>
+                           </div>
+                           <div class="checkbox">
+                               <label for="basic_distribution"><input name="basic_distribution" type="checkbox">Basic distribution</label>
+                           </div>
+                           <div class="checkbox">
+                               <label for="advance_distribution"><input name="advance_distribution" type="checkbox">Advanced distribution</label>
+                           </div>
+                        </div>
+                         <div class="form-group col-xs-12 col-md-6">
+                           <div class="checkbox">
+                               <label for="prioritization"><input name="prioritization" type="checkbox">Prioritization</label>
+                           </div>
+                            <div class="checkbox">
+                               <label for="automated_workflow"><input name="automated_workflow" type="checkbox">Automated workflow</label>
+                           </div>
+                           <div class="checkbox">
+                               <label for="automated_communication"><input name="automated_communication" type="checkbox">Automated communication</label>
+                           </div>
+                           <div class="checkbox">
+                               <label for="report_analysis"><input name="report_analysis" type="checkbox">Reporting/Analysis</label>
+                           </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-group col-xs-12 col-md-6">
+                           <h5>Dialer? If yes...</h5>
+                           <div class="checkbox">
+                               <label for="basic_outbound"><input name="basic_outbound" type="checkbox">Basic outbound</label>
+                           </div>
+                            <div class="checkbox">
+                               <label for="basic_inbound"><input name="basic_inbound" type="checkbox">Basic inbound</label>
+                           </div>
+                           <div class="checkbox">
+                               <label for="advanced_dial_func"><input name="advanced_dial_func" type="checkbox">Advanced Dialer Functionality</label>
+                           </div>
+                        </div>
+                        <div class="form-group col-xs-12 col-md-6">
+                          <h5>Pulse? If yes...</h5>
+                           <div class="checkbox">
+                               <label for="find_new_pros"><input name="find_new_pros" type="checkbox">Find new prospects</label>
+                           </div>
+                            <div class="checkbox">
+                               <label for="email_new_pros"><input name="email_new_pros" type="checkbox">Email new prospects</label>
+                           </div>
+                           <div class="checkbox">
+                               <label for="email_patt"><input name="email_patt" type="checkbox">Email pattern and email verify</label>
+                           </div>
+                           <div class="checkbox">
+                               <label for="add_lead_info"><input name="add_lead_info" type="checkbox">Additional lead info (widgets)</label>
+                           </div>
+                           <div class="checkbox">
+                               <label for="leaderboards"><input name="leaderboards" type="checkbox">Leaderboards</label>
+                           </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-group col-xs-12 col-md-6">
+                          <h5>Mortgage? If yes...</h5>
+                           <div class="checkbox">
+                               <label for="referral_mang"><input name="referral_mang" type="checkbox">Referral Management</label>
+                           </div>
+                            <div class="checkbox">
+                               <label for="present_tool"><input name="present_tool" type="checkbox">Presentation tool</label>
+                           </div>
+                           <div class="checkbox">
+                               <label for="market_auto"><input name="market_auto" type="checkbox">Marketing automation</label>
+                           </div>
+                        </div>
+                    </fieldset>
+                        <div>
+                       <br>
+                            <input class="btn" id="submit" type="submit" name="Submit">
+                        </div>   
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
