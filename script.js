@@ -1,8 +1,8 @@
 var calculatorGenerator = function(){
 var self = this;
-var initial_cost_input = {user:$("input[name='num_users']").val(), 
-                          months:$("input[name='time_months']").val(),
-                          programmers:$("input[name='num_programmers']").val()
+var initial_cost_input = {users:null, 
+                          months:null,
+                          programmers:null
                       }
 var set_times = {hourly_rate:125,
                  hours_per_day:8,
@@ -42,6 +42,8 @@ var check_box = {basic_platform:null,
 
     self.calculate = function(){
         $('#submit').click(function(){
+            event.preventDefault();
+            self.set_input_value();
             if (initial_cost_input.months != null && initial_cost_input.programmers != null){
             self.add_initial_cost();
             }else if(initial_cost_input.months == null || initial_cost_input.programmers == null){
@@ -50,23 +52,34 @@ var check_box = {basic_platform:null,
         })
         
     }
+    self.set_input_value = function(){
+        initial_cost_input.users = $("input[name='num_users']").val();
+        initial_cost_input.months = $("input[name='time_months']").val();
+        initial_cost_input.programmers = $("input[name='num_programmers']").val();
+    }
     self.initial_cost = function(){
-        base_cost.initial_cost = initial_cost_input.months * initial_cost_input.programmers * set_times.hours_per_day * set_times.days_per_month;
+        base_cost.initial_cost = initial_cost_input.months * initial_cost_input.programmers * set_times.hours_per_day * set_times.days_per_month *set_times.hourly_rate;
+        console.log("initial cost: ", base_cost.initial_cost);
     }
     self.data_storage = function(){
-        base_cost.data_storage = 2*5*25*(4.2835*Math.log(initial_cost_input.users)-4.459);
+        base_cost.data_storage = 12*5*25*(4.2835*Math.log(initial_cost_input.users)-4.459);
+        console.log("initial cost-data storage: ", base_cost.data_storage);
     }
     self.data_security = function(){
         base_cost.data_security = 5*16*initial_cost_input.users;
+        console.log("initial cost-data security: ", base_cost.data_security);
     }
     self.training = function(){
         base_cost.training = 1000*initial_cost_input.users;
+        console.log("initial cost-training: ", base_cost.training);
     }
     self.custom_maintenance = function(){
-        base_cost.custom_maintenance = 3*initial_cost;
+        base_cost.custom_maintenance = 3*base_cost.initial_cost;
+        console.log("initial cost-custom-maintenance: ", base_cost.custom_maintenance);
     }
     self.support = function(){
         base_cost.support = 1500*initial_cost_input.users;
+        console.log("initial cost-support: ", base_cost.support);
     }
     self.add_initial_cost = function(){
         self.initial_cost();
@@ -76,7 +89,7 @@ var check_box = {basic_platform:null,
         self.custom_maintenance();
         self.support();
         base_cost.total = base_cost.initial_cost+base_cost.data_storage+base_cost.data_security+base_cost.training+base_cost.custom_maintenance+base_cost.support;
-        console.log(base_cost.total);
+        console.log("total cost: ", base_cost.total);
     }
     self.checkbox_check = function(){
         self.check_1();
